@@ -9,12 +9,13 @@
         <h1>PHP</h1>
         <div>
             <?php
-                echo "Bonjour";
+                echo "debut : " . $_GET["debut"];
+                echo "<br> fin : " . $_GET["fin"];
 
-                echo "<br>";
-                for($i = 0; $i < 5; $i++)
+                while($_GET["debut"] <= $_GET["fin"])
                 {
-                    echo "Valeur : " . $i . "<br>";
+                    echo "<br>" . $_GET["debut"];
+                    $_GET["debut"]++;
                 }
             ?>
         </div>
