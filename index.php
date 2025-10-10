@@ -17,6 +17,7 @@
                     echo "<br>" . $_GET["debut"];
                     $_GET["debut"]++;
                 }
+                phpinfo();
             ?>
         </div>
     </body>
