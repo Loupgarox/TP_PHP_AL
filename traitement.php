@@ -6,8 +6,9 @@
     <body>
         <p>
             <?php
-                echo "Bonjour " .$_POST['prenom']. " ".$_POST['nom'];
+                echo "Bonjour ".$_GET['prenom']." ".$_GET['nom'];
             ?>
         </p>
     </body>
 </html>
+
