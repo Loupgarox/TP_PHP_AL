@@ -9,12 +9,19 @@
         <h1>PHP</h1>
         <div>
             <?php
-                $table = $_GET["table"];
+                $tabledebut = $_GET["tabledebut"];
+                $tablefin = $_GET["tablefin"];
                 $i = 0;
-                while($i <= 10)
+
+                for($j = $tabledebut; $j <= $tablefin; $j++)
                 {
-                    echo $i . " x " . $table . " = " . $i * $table . "<br>";
-                    $i++;
+                    while($i <= 10)
+                    {
+                        echo $i . " x " . $j . " = " . $i * $j . "<br>";
+                        $i++;
+                    }
+                    $i = 0;
+                    echo "<br>";
                 }
             ?>
         </div>
