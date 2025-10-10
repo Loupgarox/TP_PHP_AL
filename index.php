@@ -9,15 +9,13 @@
         <h1>PHP</h1>
         <div>
             <?php
-                echo "debut : " . $_GET["debut"];
-                echo "<br> fin : " . $_GET["fin"];
-
-                while($_GET["debut"] <= $_GET["fin"])
+                $table = $_GET["table"];
+                $i = 0;
+                while($i <= 10)
                 {
-                    echo "<br>" . $_GET["debut"];
-                    $_GET["debut"]++;
+                    echo $i . " x " . $table . " = " . $i * $table . "<br>";
+                    $i++;
                 }
-                phpinfo();
             ?>
         </div>
     </body>
