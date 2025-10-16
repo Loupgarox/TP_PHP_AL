@@ -20,7 +20,8 @@
             }
             else{
                 //On crée une requête SQL préparée
-                $requete = "select * from film where id = :numFilm";
+                //$requete = "select film.id, film.titre from film where id = :numFilm";
+                $requete = "select film.id, film.titre, realisateur.nom as realisateur, acteur.nom from distribution join film on distribution.idfilm = film.id join acteur on distribution.idacteur = acteur.id join realisateur on film.idrealisateur = realisateur.id where distribution.idfilm = :numFilm";
                 $commande = $connexion->prepare($requete);
                 
                 //On affecte une valeur au paramètre
@@ -40,7 +41,7 @@
                     //Ici on génère du code HTML
                     echo "<br/><p>-->Film n°".$numFilm." trouvé...</p>";
                     echo "<table border=1>" ;
-                    echo "<tr><th>Numéro</th><th>Titre</th></tr>";
+                    echo "<tr><th>Numéro</th><th>Titre</th><th>Réalisateur</th><th>Liste des acteurs</th></tr>";
 
                     //Pour chaque ligne du curseur...
                     foreach($curseur as $row) {
@@ -48,6 +49,8 @@
                         echo "<tr>";
                         echo "<td>".$row['id']."</td>";
                         echo "<td>".$row['titre']."</td>";
+                        echo "<td>".$row['realisateur']."</td>";
+                        echo "<td>".$row['nom']."</td>";
                         echo "</tr>";
                     }
                     echo "</table>";
