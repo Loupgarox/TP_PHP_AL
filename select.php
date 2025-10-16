@@ -3,7 +3,7 @@
     $pass = '';
 
     try {
-        $connexion = new PDO('mysql:host=localhost;port=3307;dbname=films', $user, $pass);
+        $connexion = new PDO('mysql:host=localhost;port=3306;dbname=films', $user, $pass);
         echo "<p>Connexion etablie à la base films...</p>";
 
         //On vérifie que quelque chose a été saisi dans le TextBox numFilm
