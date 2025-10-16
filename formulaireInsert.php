@@ -24,7 +24,7 @@ and open the template in the editor.
             <input type="number" name="annee" required>
             <br>
             Score :
-            <input type="number" name="score" required>
+            <input type="text" name="score" required>
             <br>
             Nombre de votants :
             <input type="number" name="nbrvotants" required>
