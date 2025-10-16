@@ -29,6 +29,7 @@ and open the template in the editor.
             Nombre de votants :
             <input type="number" name="nbrvotants" required>
             <br>
+            <input type="reset" value="Réinsialiser" required>  
             <input type="submit" value="Ajouter" required>  
         </form>
     </body>
