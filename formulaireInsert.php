@@ -10,7 +10,7 @@ and open the template in the editor.
         <title></title>
     </head>
         <h1>Ajouter un nouveau film</h1>
-        <form action="index.php" method="post">
+        <form action="insertFilm.php" method="post">
             Identifiant du film :
             <input type="number" name="idfilm" required>
             <br>
