@@ -15,5 +15,8 @@ and open the template in the editor.
             <input type="text" name="numfilm">
             <input type="submit" value="Rechercher">  
         </form>
+        <form action="formulaireInsert.php" method="post">
+            <input type="submit" value="Ajouter un film">  
+        </form>
     </body>
 </html>
