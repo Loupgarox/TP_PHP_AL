@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
         <title></title>
     </head>
-        <h1>Interroger la base des films</h1>
-        <form action="select.php" method="post">
-            Numéro du film à rechercher : 
-            <input type="text" name="numfilm">
-            <input type="submit" value="Rechercher">  
-        </form>
-        <form action="formulaireInsert.php" method="post">
-            <input type="submit" value="Ajouter un film">  
-        </form>
+    <body>
+        <?php
+            include_once 'Livre.php';
+            
+            //appel à une méthode statique préfixée par le nom de la classe
+            //L'opérateur de portée est ::
+            echo "Il y a actuellement ". Livre::getnbLivre() ." livre(s)<br/>";
+            
+            //instanciation d'un nouveau livre
+            $unLivre = new Livre(1, "Initiation au PHP objet");
+            
+            //Appel à une méthode publique d'instance
+            //L'opérateur de portée est ->
+            echo $unLivre->toString();
+            echo "Il y a actuellement ". Livre::getnbLivre() ." livre(s)<br/>";                
+            $unLivre->emprunter(18);
+            echo $unLivre->toString();
+            $unLivre->rendre();
+            echo $unLivre->toString();
+            
+            $unAutreLivre = new Livre(2, "Approfondissement au PHP objet");   
+            echo $unAutreLivre->toString();            
+            echo "Il y a actuellement ". Livre::getnbLivre() ." livre(s)<br/>";            
+        ?>
     </body>
 </html>
