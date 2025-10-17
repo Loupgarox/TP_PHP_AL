@@ -12,12 +12,12 @@
             //On vérifie que c'est bien un nombre car on ne fait jamais confiance à l'utilisateur
             //Si le contenu de $_POST['numfilm'] filtré est bien un entier on l'affecte à la variable $numFilm
             //Sinon on affecte false à la variable $numFilm
-            $idFilm = $_POST['idfilm'];
-            $idRealisateur = $_POST['idrealisateur'];
-            $titre = $_POST['titre'];
-            $annee = $_POST['annee'];
-            $score = $_POST['score'];
-            $nbrvotants = $_POST['nbrvotants'];
+            $idFilm = filter_var($_POST['idfilm'], FILTER_SANITIZE_NUMBER_INT);
+            $idRealisateur = filter_var($_POST['idrealisateur'], FILTER_SANITIZE_NUMBER_INT); 
+            $titre = filter_var($_POST['titre'], FILTER_DEFAULT);
+            $annee = filter_var($_POST['annee'], FILTER_SANITIZE_NUMBER_INT);
+            $score = filter_var($_POST['score'], FILTER_SANITIZE_NUMBER_FLOAT);
+            $nbrvotants = filter_var($_POST['nbrvotants'], FILTER_SANITIZE_NUMBER_INT);
 
             //On crée une requête SQL préparée
             $requete = "insert into film(id, titre, annee, score, nbvotant, idrealisateur) VALUES
